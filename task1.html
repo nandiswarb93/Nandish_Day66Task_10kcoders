@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+function add(a, b, callback) {
+    const result = a + b;
+    callback(result);
+}
+
+
+function subtract(a, b, callback) {
+    const result = a - b;
+    callback(result);
+}
+
+function multiply(a, b, callback) {
+    const result = a * b;
+    callback(result);
+}
+
+add(10, 5, (additionResult) => {
+    subtract(additionResult, 3, (subtractionResult) => {
+        multiply(subtractionResult, 2, (multiplicationResult) => {
+            console.log('Final result:', multiplicationResult);
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
